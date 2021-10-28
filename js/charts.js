@@ -19,7 +19,7 @@ function init() {
     buildCharts(firstSample);
     buildMetadata(firstSample);
   });
-}
+  }
 
 // Initialize the dashboard
 init();
@@ -55,14 +55,13 @@ function buildMetadata(sample) {
 }
 
 // 1. Create the buildCharts function.
-function init() {
 function buildBarCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("samples.json").then((data) => {
     // 3. Create a variable that holds the samples array. 
     var samples = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-    var filteredSamples = samples.filter(sampleObject => sampleObject.id == sample)
+    var filteredSamples = samples.filter(sampleObject => sampleObject.id == sample);
     //  5. Create a variable that holds the first sample in the array.
     var firstSample = filteredSamples[0];
 
@@ -92,10 +91,8 @@ function buildBarCharts(sample) {
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot(("bar", barData, barLayout));
   })};
-};
    // Bar and Bubble charts
 // Create the buildCharts function.
-function init() {
 function buildBubbleChart(sample) {
   // Use d3.json to load and retrieve the samples.json file 
   //d3.json("samples.json").then((data) => {
@@ -123,10 +120,9 @@ function buildBubbleChart(sample) {
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot('bubble', bubbleData, bubbleLayout); 
   };
-};
 
 // Create the buildChart function.
-function buildGaugeChart(sample) {
+function buildGaugeCharts(sample) {
   // Use d3.json to load the samples.json file 
   d3.json("samples.json").then((data) => {
     console.log(data);
@@ -163,7 +159,7 @@ function buildGaugeChart(sample) {
     var gaugeData = [{
       domain: { x: [0, 1], y: [0, 1] },
       value: 270,
-      title: { text: "Belly Button Washing" },
+      title: { text: "Belly Button Washing " },
       type: "indicator",
       mode: "gauge+number"
     }
